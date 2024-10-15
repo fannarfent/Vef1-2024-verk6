@@ -131,14 +131,20 @@ function reverse(str) {
 
 function palindrome(str) {
   // Útfæra
+  // Þarf að vera string (aftur)
   if(isString(str)){
+    // Setjum strenginn í lowercase svo léttara að vinna með
     str = str.toLowerCase();
+    // splita strengnum í karaktera
     var strSplit = str.split("");
+    // förum í gegnum lengdina á arrayinu sem fengið er með split
     for (let i = 0; i < strSplit.length; i++) {
+      // skoðum hvort char[i] sé einns fram og afturábak og chari[i+1 líka]
       if(strSplit[i] === strSplit.reverse()[i] && strSplit[i+1] === strSplit.reverse()[i+1]){
-
+        //skilar true ef svo er
         return true
       }else{
+        //annars skilar false
         return false
     }
   }
